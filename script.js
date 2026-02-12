@@ -3,14 +3,14 @@
 // ==========================================
 
 // ========== 1. DONNÉES PRODUITS (DATA) ==========
-// Chemins corrigés : dossier "images/" (pluriel)
+// NOTE : Les fichiers images doivent être AU MÊME NIVEAU que index.html
 const products = [
     { 
         id: 1, name: "Vestes Rose et Blanche", category: "Veste", price: 1890, 
-        description: "Veste bicolore rose et blanche d'inspiration sportswear, revisitant avec élégance les codes emblématiques du style baseball.", 
+        description: "Veste bicolore rose et blanche d'inspiration sportswear.", 
         images: [
-            "images/img_3692.jpeg",
-            "images/img_3693.jpeg"
+            "img_3692.jpeg",
+            "img_3693.jpeg"
         ],
         sizes: ["XS", "S", "M", "L", "XL"], 
         colors: [
@@ -24,7 +24,7 @@ const products = [
         id: 2, name: "Veste Rouge et Marron", category: "Veste", price: 1450, 
         description: "Veste de qualité supérieure, coloris rouge et marron.", 
         images: [
-            "images/img_3697.jpeg"
+            "img_3697.jpeg"
         ],
         sizes: ["XS", "S", "M", "L"], 
         colors: [
@@ -37,8 +37,8 @@ const products = [
         id: 3, name: "Surchemise Bleue", category: "Veste", price: 980, 
         description: "Surchemise bleue élégante.", 
         images: [
-            "images/img_3689.jpeg",
-            "images/img_3690.jpeg"
+            "img_3689.jpeg",
+            "img_3690.jpeg"
         ],
         sizes: ["S", "M", "L"], 
         colors: [
@@ -50,7 +50,7 @@ const products = [
         id: 4, name: "Surchemise Noire", category: "Veste", price: 780, 
         description: "Surchemise noire intemporelle.", 
         images: [
-            "images/img_3694.jpeg"
+            "img_3694.jpeg"
         ],
         sizes: ["S", "M", "L", "XL"], 
         colors: [
@@ -62,7 +62,7 @@ const products = [
     { 
         id: 5, name: "Blazer Rouge", category: "Veste", price: 420, 
         description: "Blazer rouge coupe ajustée.", 
-        images: ["images/img_3695.jpeg"], 
+        images: ["img_3695.jpeg"], 
         sizes: ["S", "M", "L"], 
         colors: [{ name: "Rouge", hex: "#A9A9A9" }],
         composition: ["100% Laine Mérinos"]
@@ -70,7 +70,7 @@ const products = [
     { 
         id: 6, name: "Veste Noire", category: "Veste", price: 280, 
         description: "Veste noire classique.", 
-        images: ["images/img_3698.jpeg"], 
+        images: ["img_3698.jpeg"], 
         sizes: ["S", "M", "L"], 
         colors: [{ name: "Noir", hex: "#1A1A1A" }], 
         composition: ["100% Coton"]
@@ -78,7 +78,7 @@ const products = [
     { 
         id: 7, name: "Sac Vert et Orange", category: "Sac", price: 380, 
         description: "Sac tendance vert et orange.", 
-        images: ["images/img_3699.jpeg"], 
+        images: ["img_3699.jpeg"], 
         sizes: ["Unique"], 
         colors: [{ name: "Vert", hex: "#00FF00" }], 
         composition: ["Cuir Synthétique"]
@@ -86,7 +86,7 @@ const products = [
     { 
         id: 8, name: "Chemise en Soie", category: "Chemise", price: 320, 
         description: "Chemise en soie douce et légère.", 
-        images: ["images/img_3691.jpeg"], 
+        images: ["img_3691.jpeg"], 
         sizes: ["S", "M", "L"], 
         colors: [{ name: "Beige", hex: "#F5F5DC" }], 
         composition: ["100% Soie"]
@@ -94,7 +94,7 @@ const products = [
     { 
         id: 9, name: "Veste Marron", category: "Veste", price: 560, 
         description: "Veste marron chaude.", 
-        images: ["images/img_3684.jpeg"], 
+        images: ["img_3684.jpeg"], 
         sizes: ["S", "M", "L"], 
         colors: [{ name: "Camel", hex: "#C19A6B" }], 
         composition: ["100% Cachemire"]
@@ -103,8 +103,8 @@ const products = [
         id: 10, name: "Surchemise Mixte", category: "Veste", price: 290, 
         description: "Surchemise polyvalente.", 
         images: [
-            "images/img_3687.jpeg",
-            "images/img_3688.jpeg"
+            "img_3687.jpeg",
+            "img_3688.jpeg"
         ], 
         sizes: ["S", "M", "L"], 
         colors: [{ name: "Noir", hex: "#1A1A1A" }], 
@@ -113,7 +113,7 @@ const products = [
     { 
         id: 11, name: "Veste Bleue", category: "Veste", price: 680, 
         description: "Veste bleue moderne.", 
-        images: ["images/img_3685.jpeg"], 
+        images: ["img_3685.jpeg"], 
         sizes: ["36", "37", "38", "39", "40"], 
         colors: [{ name: "Bleu", hex: "#0000FF" }], 
         isNew: true,
@@ -123,8 +123,8 @@ const products = [
         id: 12, name: "T-Shirt Noir", category: "Hauts", price: 520, 
         description: "T-shirt noir essentiel.", 
         images: [
-            "images/img_3700.jpeg",
-            "images/img_3701.jpeg"
+            "img_3700.jpeg",
+            "img_3701.jpeg"
         ], 
         sizes: ["S", "M"], 
         colors: [{ name: "Noir", hex: "#1A1A1A" }], 
