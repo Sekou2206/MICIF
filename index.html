@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M.I.C.I | BRAND</title>
+    <meta name="description" content="Maison de Haute Couture - Collection Automne-Hiver 2026.">
+    
+    <!-- Google Fonts (Rétabli pour le design) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Page Transition Overlay -->
+    <div class="page-transition">
+        <div class="transition-layer layer-top"></div>
+        <div class="transition-layer layer-bottom"></div>
+        <div class="transition-logo">M.I.C.I</div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-container">
+            <div class="nav-left">
+                <button class="menu-btn" id="menuBtn" aria-label="Menu">
+                    <span></span><span></span>
+                </button>
+                <div class="nav-links">
+                    <a href="#" class="nav-link active" data-page="home" onclick="navigateTo('home')">Accueil</a>
+                    <a href="#" class="nav-link" data-page="boutique" onclick="navigateTo('boutique')">Boutique</a>
+                </div>
+            </div>
+            
+            <div class="nav-center">
+                <a href="#" class="logo" onclick="navigateTo('home')">
+                    <span class="logo-text">M.I.C.I</span>
+                </a>
+            </div>
+            
+            <div class="nav-right">
+                <div class="currency-wrapper">
+                    <button class="currency-btn" onclick="toggleCurrencyDropdown()">
+                        <span id="currencyLabel">EUR</span>
+                        <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="currency-dropdown" id="currencyDropdown">
+                        <button onclick="setCurrency('EUR')">EUR €</button>
+                        <button onclick="setCurrency('USD')">USD $</button>
+                        <button onclick="setCurrency('XOF')">XOF FCFA</button>
+                    </div>
+                </div>
+                <button class="icon-btn" onclick="navigateTo('contact')">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                </button>
+                <button class="icon-btn" onclick="navigateTo('favorites')">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                    <span class="badge" id="favoritesCount">0</span>
+                </button>
+                <button class="icon-btn" onclick="toggleCart()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                    </svg>
+                    <span class="badge" id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+             <span class="logo-text">M.I.C.I</span>
+            <button class="close-btn" onclick="toggleMobileMenu()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+        <div class="mobile-menu-links">
+            <a href="#" class="mobile-link" onclick="navigateTo('home'); toggleMobileMenu()">Accueil</a>
+            <a href="#" class="mobile-link" onclick="navigateTo('boutique'); toggleMobileMenu()">Boutique</a>
+            <a href="#" class="mobile-link" onclick="navigateTo('contact'); toggleMobileMenu()">Contact</a>
+            <a href="#" class="mobile-link" onclick="navigateTo('favorites'); toggleMobileMenu()">Favoris</a>
+        </div>
+        <div class="mobile-currency">
+            <p>Devise</p>
+            <div class="currency-options">
+                <button class="currency-opt active" onclick="setCurrency('EUR')">EUR</button>
+                <button class="currency-opt" onclick="setCurrency('USD')">USD</button>
+                <button class="currency-opt" onclick="setCurrency('XOF')">FCFA</button>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-menu-overlay" onclick="toggleMobileMenu()"></div>
+
+    <main>
+        <!-- ===================== PAGE ACCUEIL (EDITORIAL) ===================== -->
+        <section class="page active" id="page-home">
+            <div class="hero">
+                <div class="hero-bg">
+                    <!-- IMAGE HERO : Remplacez 'images/hero.jpeg' par votre fichier -->
+                    <div class="hero-bg-inner" style="background-image: url('_\ \(29\).jpeg')"></div>
+                    <div class="hero-bg-overlay"></div>
+                </div>
+                <div class="hero-content">
+                    <div class="hero-subtitle"><span>Automne-Hiver 2026</span></div>
+                    <h1 class="hero-title">
+                        <span class="line-wrap"><span class="line-inner">L'Art du</span></span>
+                        <span class="line-wrap"><span class="line-inner">Luxe</span></span>
+                    </h1>
+                    <div class="hero-buttons">
+                        <a href="#" class="btn btn-primary" onclick="navigateTo('boutique')">Explorer la Collection</a>
+                    </div>
+                </div>
+                <div class="scroll-indicator">
+                    <span>Découvrir</span>
+                    <div class="scroll-line"><div class="scroll-dot"></div></div>
+                </div>
+            </div>
+
+            <!-- Story Section -->
+            <section class="story-section">
+                <div class="container">
+                    <div class="story-grid">
+                        <div class="story-content reveal-up">
+                            <span class="section-label">La Maison</span>
+                            <h2 class="section-title">L'Excellence<br>en Héritage</h2>
+                            <p class="story-text">M.I.C.I perpétue l'art du luxe discret. Chaque création est le fruit d'un savoir-faire ancestral transmis avec passion, où les matériaux les plus nobles rencontrent l'excellence de l'artisanat.</p>
+                            <div class="signature">
+                                <!-- IMAGE SIGNATURE : Remplacez par votre fichier -->
+                                <img src="images/signature.jpeg" alt="Signature">
+                            </div>
+                        </div>
+                        <div class="story-image reveal-up">
+                            <div class="story-image-wrapper parallax-wrapper">
+                                <!-- IMAGE ATELIER : Remplacez par votre fichier -->
+                                <img src="IMG_3683.PNG" alt="Atelier">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Philosophy -->
+            <section class="philosophy-section">
+                 <!-- IMAGE PHILOSOPHY : Remplacez par votre fichier -->
+                 <div class="philosophy-bg parallax-bg" style="background-image: url('IMG_3685.PNG')"></div>
+                 <div class="philosophy-content">
+                     <h2 class="philosophy-title reveal-up">Le luxe est dans chaque détail.</h2>
+                 </div>
+            </section>
+        </section>
+
+        <!-- ===================== PAGE BOUTIQUE (PRODUITS) ===================== -->
+        <section class="page" id="page-boutique">
+            <div class="shop-header">
+                <div class="container">
+                    <div class="shop-header-content reveal-up">
+                        <span class="section-label">Collection</span>
+                        <h1 class="page-title">La Boutique</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="shop-content">
+                <div class="container">
+                    <div class="catalog-toolbar">
+                        <div class="filter-controls">
+                             <select id="categorySelect" onchange="filterProducts()">
+                                <option value="all">Toutes catégories</option>
+                                <option value="Manteaux">Manteaux</option>
+                                <option value="Robes">Robes</option>
+                                <option value="Vestes">Vestes</option>
+                                <option value="Accessoires">Accessoires</option>
+                                <option value="Sacs">Sacs</option>
+                            </select>
+                            <select id="sortSelect" onchange="filterProducts()">
+                                <option value="featured">En vedette</option>
+                                <option value="price-asc">Prix croissant</option>
+                                <option value="price-desc">Prix décroissant</option>
+                            </select>
+                        </div>
+                        <div class="results-count" id="resultsCount">0 articles</div>
+                    </div>
+                    <div class="products-grid" id="productsGrid"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== PAGE CONTACT ===================== -->
+        <section class="page" id="page-contact">
+            <div class="contact-page-header">
+                <div class="container">
+                     <div class="reveal-up">
+                        <span class="section-label">Service Client</span>
+                        <h1 class="page-title">Contact</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-page-content">
+                <div class="container">
+                    <div class="contact-grid-luxe">
+                        <div class="contact-form-col reveal-up">
+                            <form class="contact-form" onsubmit="event.preventDefault(); showToast('Message envoyé');">
+                                <div class="form-group">
+                                    <label>Votre nom</label>
+                                    <input type="text" required>
+                                    <div class="form-line"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input type="email" required>
+                                    <div class="form-line"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Message</label>
+                                    <textarea rows="4" required></textarea>
+                                    <div class="form-line"></div>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-full">Envoyer</button>
+                            </form>
+                        </div>
+                        <div class="contact-info-col reveal-up">
+                            <div class="info-block">
+                                <h3>Aby Concept</h3>
+                                <p>25 Avenue XXXXXXX<br>75008 Abidjan, Cote D'Ivoire</p>
+                            </div>
+                            <div class="info-block">
+                                <h3>Téléphone</h3>
+                                <p>+225XXXXXXXX</p>
+                            </div>
+                            <div class="info-block">
+                                <h3>Horaires</h3>
+                                <p>Lun - Sam: 10h - 19h</p>
+                            </div>
+                            <div class="social-links">
+                                <a href="#" class="social-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== PAGE FAVORIS ===================== -->
+        <section class="page" id="page-favorites">
+            <div class="shop-header">
+                <div class="container">
+                    <div class="shop-header-content reveal-up">
+                        <h1 class="page-title">Mes Favoris</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="shop-content">
+                <div class="container">
+                    <div class="favorites-empty" id="favoritesEmpty">
+                        <p>Vous n'avez pas encore de favoris.</p>
+                        <button class="btn btn-primary" onclick="navigateTo('boutique')">Boutique</button>
+                    </div>
+                    <div class="products-grid" id="favoritesGrid"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col footer-brand">
+                        <span class="logo-text">M.I.C.I</span>
+                        <p class="footer-desc">Maison de Haute Couture.<br>L'art du luxe intemporel </p>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Boutique</h4>
+                        <ul>
+                            <li><a href="#" onclick="navigateTo('boutique')">Nouveautés</a></li>
+                            <li><a href="#" onclick="navigateTo('boutique')">Femmes</a></li>
+                            <li><a href="#" onclick="navigateTo('boutique')">Accessoires</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Assistance</h4>
+                        <ul>
+                            <li><a href="#" onclick="navigateTo('contact')">Contact</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Livraison</a></li>
+                            <li><a href="#">Retours</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col footer-newsletter">
+                        <h4>Newsletter</h4>
+                        <p>Inscrivez-vous pour recevoir nos actualités.</p>
+                        <form onsubmit="event.preventDefault(); showToast('Merci pour votre inscription');">
+                            <input type="email" placeholder="Votre email" required>
+                            <button type="submit" class="footer-btn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 2L11 13"></path>
+                                    <path d="M22 2L15 22L11 13L2 9L22 2Z"></path>
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-inner">
+                    <p>© 2026 M.I.C.I. Tous droits réservés.</p>
+                    <div class="footer-legal">
+                        <a href="#">Mentions Légales</a>
+                        <a href="#">CGV</a>
+                        <a href="#">Confidentialité</a>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/m.i.c.i.clothingapparel/" aria-label="Instagram">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </a>
+                        <a href="#" aria-label="Pinterest">
+                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><path d="M8 12c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4"></path><line x1="12" y1="16" x2="12" y2="21"></line></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL PRODUIT (LUXE) -->
+    <div class="modal-overlay" id="productModal" onclick="closeProductModal(event)">
+        <div class="modal-content-luxe" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeProductModal()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            
+            <div class="modal-grid-luxe">
+                <!-- Colonne Gauche : Carroussel -->
+                <div class="modal-gallery">
+                    <div class="gallery-main">
+                        <div class="gallery-track" id="galleryTrack">
+                            <!-- Les images produits sont gérées par JS -->
+                        </div>
+                        <button class="gallery-nav prev" onclick="changeSlide(-1)">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                        </button>
+                        <button class="gallery-nav next" onclick="changeSlide(1)">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                        </button>
+                    </div>
+                    <div class="gallery-dots" id="galleryDots"></div>
+                </div>
+
+                <!-- Colonne Droite : Infos Produit -->
+                <div class="modal-details-luxe">
+                    <div class="details-header">
+                        <span class="modal-category" id="modalCategory"></span>
+                        <h2 class="modal-title" id="modalTitle"></h2>
+                        <div class="modal-price" id="modalPriceContainer">
+                            <span class="current-price" id="modalPrice"></span>
+                        </div>
+                    </div>
+
+                    <!-- ZONE DE SCROLL -->
+                    <div class="modal-scroll-zone">
+                        <p class="modal-description" id="modalDescription"></p>
+
+                        <!-- Sélection Couleur -->
+                        <div class="option-block">
+                            <div class="option-header">
+                                <span>Couleur</span>
+                                <span class="selected-value" id="selectedColorName">Choisir une couleur</span>
+                            </div>
+                            <div class="color-options-luxe" id="modalColors"></div>
+                        </div>
+
+                        <!-- Sélection Taille -->
+                        <div class="option-block">
+                            <div class="option-header">
+                                <span>Taille</span>
+                                <a href="#" class="size-guide-link">Guide des tailles</a>
+                            </div>
+                            <div class="size-options-luxe" id="modalSizes"></div>
+                        </div>
+
+                        <!-- Accordion -->
+                        <div class="details-accordion">
+                            <div class="accordion-item open">
+                                <button class="accordion-btn" onclick="toggleAccordion(this)">
+                                    <span>Composition & Entretien</span>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                                </button>
+                                <div class="accordion-content">
+                                    <ul id="modalComposition"></ul>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <button class="accordion-btn" onclick="toggleAccordion(this)">
+                                    <span>Livraison & Retours</span>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                                </button>
+                                <div class="accordion-content">
+                                    <p>Livraison express offerte sous 2-4 jours ouvrés. Retours gratuits sous 30 jours.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- FIN ZONE DE SCROLL -->
+
+                    <!-- Actions (Toujours en bas) -->
+                    <div class="modal-actions-luxe">
+                        <button class="btn btn-primary btn-full" id="addToCartBtn">
+                            <span>Ajouter au panier</span>
+                        </button>
+                        <button class="btn-wishlist" id="favoriteBtn" onclick="toggleFavorite(currentProduct?.id)">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Panel -->
+    <div class="cart-overlay" onclick="toggleCart()"></div>
+    <div class="cart-panel" id="cartPanel">
+        <div class="cart-header">
+            <h2>Votre Panier</h2>
+            <button class="close-btn" onclick="toggleCart()"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
+        </div>
+        <div class="cart-items" id="cartItems"><div class="cart-empty"><p>Votre panier est vide</p></div></div>
+        <div class="cart-footer" id="cartFooter" style="display: none;">
+            <div class="cart-totals">
+                <div class="cart-total-row total"><span>Total</span><span id="cartTotal">0</span></div>
+            </div>
+            <button class="btn btn-primary btn-full">Commander</button>
+        </div>
+    </div>
+    
+    <div class="toast" id="toast"><span class="toast-message" id="toastMessage"></span></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
